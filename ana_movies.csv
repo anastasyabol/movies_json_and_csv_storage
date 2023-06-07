@@ -1,0 +1,16 @@
+sep=";"
+title;rating;year;img;imdbID;notes
+Titanic;7.9;1997;https://m.media-amazon.com/images/M/MV5BMDdmZGU3NDQtY2E5My00ZTliLWIzOTUtMTY4ZGI1YjdiNjk3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg;tt0120338;. new. dsfsd. My first movie
+Avatar;7.9;2009;https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg;tt0499549;
+Puss in Boots: The Last Wish;7.9;2022;https://m.media-amazon.com/images/M/MV5BNjMyMDBjMGUtNDUzZi00N2MwLTg1MjItZTk2MDE1OTZmNTYxXkEyXkFqcGdeQXVyMTQ5NjA0NDM0._V1_SX300.jpg;tt3915174;
+The Dark Knight;9.0;2008;https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg;tt0468569;
+But I'm a Cheerleader;6.7;1999;https://m.media-amazon.com/images/M/MV5BNmZjNGVmYmItZWFmNi00ODQ1LThmZTUtMzYzMGJlMjZjMGFiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg;tt0179116;
+Eight;6.6;1998;https://m.media-amazon.com/images/M/MV5BNTc5OGY1ODQtZDMzOC00ODc0LThhMzUtMmZlMTMxNjQ4YjQ2XkEyXkFqcGdeQXVyNTA3MjYwMzY@._V1_SX300.jpg;tt0205903;
+Anastasia;7.1;1997;https://m.media-amazon.com/images/M/MV5BNGJiNWFlYTMtZTBiZi00ZTVmLWJmZmMtNzEzYzZjNzYzZmRmXkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg;tt0118617;
+The Lord of the Rings: The Return of the King;9.0;2003;https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg;tt0167260;
+The Lion King;8.5;1994;https://m.media-amazon.com/images/M/MV5BYTYxNGMyZTYtMjE3MS00MzNjLWFjNmYtMDk3N2FmM2JiM2M1XkEyXkFqcGdeQXVyNjY5NDU4NzI@._V1_SX300.jpg;tt0110357;
+Mark Felt: The Man Who Brought Down the White House;6.4;2017;https://m.media-amazon.com/images/M/MV5BMjQzMDEwMjMyNF5BMl5BanBnXkFtZTgwNjA1NTA1MzI@._V1_SX300.jpg;tt5175450;
+Dream;6.5;2008;https://m.media-amazon.com/images/M/MV5BNDlmZWQ3MWItNTE2OC00Yjk2LThiYjktN2M0ZTllZGU1YjhkXkEyXkFqcGdeQXVyNTY2MTMwOTQ@._V1_SX300.jpg;tt1165253;
+One Flew Over the Cuckoo's Nest;8.7;1975;https://m.media-amazon.com/images/M/MV5BZjA0OWVhOTAtYWQxNi00YzNhLWI4ZjYtNjFjZTEyYjJlNDVlL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg;tt0073486;
+Mr. and Mrs. Iyer;7.9;2002;https://m.media-amazon.com/images/M/MV5BNTcyNzA0MzktYWI5NS00Nzk2LTkzYjctMmE4ZGMxN2JkNjIxXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg;tt0329393;
+Interstellar;8.7;2014;https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg;tt0816692;
