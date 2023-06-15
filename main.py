@@ -2,11 +2,11 @@ from movie_app import MovieApp
 from json_storage import StorageJson
 from csv_storage import StorageCsv
 
-storage_json = StorageJson("david_movies.json")
-storage_csv = StorageCsv('ana_movies.csv')
 
 def main():
     """Launches run() from movie_app.py, user selects file to work with"""
+    storage_json = StorageJson("david_movies.json")
+    storage_csv = StorageCsv('ana_movies.csv')
     user_format = ""
     while True:
         user_format = input(" Enter 'csv' or 'json' ")

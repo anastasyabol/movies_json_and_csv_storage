@@ -1,5 +1,5 @@
 import statistics
-
+import random
 
 class MovieApp:
     def __init__(self, storage):
@@ -10,18 +10,24 @@ class MovieApp:
         """uses print_movie_list of the storage/prints all the movies saved in the file """
         self._storage.print_movie_list()
 
+
+    def _movies_rating_only(self):
+        """From the self._movies of the object creates smaller dictionary self._movies_rating {name: rating}"""
+        self._movies_rating = {}
+        for k, v in self._storage._movies_list:
+            self._movies_rating[k] = float(v['rating'])
+        return self._movies_rating
+
     def _command_movie_stats(self):
-        """From the self.movies of the object creates smaller dictionary self.movies_rating {name: rating}
+        """From the self._movies of the object creates smaller dictionary self._movies_rating {name: rating}
         and calculates stats. This is for easier stats execution"""
-        self.movies_rating = {}
-        for k, v in self._storage.movies.items():
-            self.movies_rating[k] = float(v['rating'])
-        average_raiting = round(statistics.mean(self.movies_rating.values()), 2)
-        highest_rating = max(self.movies_rating.values())
-        highest_name = max(self.movies_rating, key=self.movies_rating.get)
-        worst_rating = min(self.movies_rating.values())
-        worst_name = min(self.movies_rating, key=self.movies_rating.get)
-        median_rating = round(statistics.median(self.movies_rating.values()), 2)
+        self._movies_rating = self._movies_rating_only()
+        average_raiting = round(statistics.mean(self._movies_rating.values()), 2)
+        highest_rating = max(self._movies_rating.values())
+        highest_name = max(self._movies_rating, key=self._movies_rating.get)
+        worst_rating = min(self._movies_rating.values())
+        worst_name = min(self._movies_rating, key=self._movies_rating.get)
+        median_rating = round(statistics.median(self._movies_rating.values()), 2)
         print(f'Average raiting: {average_raiting}')
         print(f'Median rating: {median_rating}')
         print(f'Best movie: {highest_name} : {highest_rating}')
@@ -37,9 +43,9 @@ class MovieApp:
             if user_sort != "1" and user_sort != "2":
                 print("Wrong selection")
             if user_sort == "1":
-                sorted_movies = sorted(self._storage.movies.items(), key=lambda x: x[1]['year'])
+                sorted_movies = sorted(self._storage._movies.items(), key=lambda x: x[1]['year'])
             elif user_sort == "2":
-                sorted_movies = sorted(self._storage.movies.items(), key=lambda x: -float(x[1]['rating']))
+                sorted_movies = sorted(self._storage._movies.items(), key=lambda x: -float(x[1]['rating']))
             break
         for item in sorted_movies:
             html_sourse += f'<li> \n ' \
@@ -63,6 +69,30 @@ class MovieApp:
             file.write(htmldata)
         print(f"Web page {new_html_name} was created")
 
+    def _random_movie(self):
+        """Prints random movie from _storage._movies"""
+        random_movie = random.choice(list(self._storage._movies.keys()))
+        print(f"Your movie for tonight: {random_movie}: {self._storage._movies[random_movie]['rating']}")
+
+    def _search_movie(self):
+        """Search movie by word or part of it in movies"""
+        search = input("Enter part of movie name: ")
+        # found is a new list of pairs key, value that contains only pairs where key in lower case contains search in lower case
+        found = [(k, v) for k, v in self._storage._movies_list if search.lower() in k.lower()]
+        if len(found) == 0:
+            print("Not found. Please try again")
+            return
+        else:
+            for item in found:
+                print(item[0], item[1]['rating'])
+
+    def _movies_by_rating(self):
+        """Prints the list of movies by rating, using self method _movies_rating_only"""
+        self._movies_rating = self._movies_rating_only()
+        self._sorted_movies = sorted(self._movies_rating.items(), key=lambda x: -x[1])
+        for name, rating in self._sorted_movies:
+            print(name, rating)
+
     def run(self):
         """Main function using dictionary of commands to call function by number"""
         dict_fun = {}
@@ -72,6 +102,9 @@ class MovieApp:
         dict_fun[4] = self._storage.update_movie
         dict_fun[5] = self._command_movie_stats
         dict_fun[6] = self._generate_website
+        dict_fun[7] = self._random_movie
+        dict_fun[8] = self._search_movie
+        dict_fun[9] = self._movies_by_rating
         while True:
             print("""
                 ********** My Movies Database **********
@@ -83,10 +116,13 @@ class MovieApp:
                 4. Add notes
                 5. Stats
                 6. Generate website
+                7. Random movie
+                8. Search
+                9. Movies by rating (print)
             """
                   )
-            option = int(input("Enter choice (0-6):  "))
-            if 1 == option or 5 <= option <= 6:
+            option = int(input("Enter choice (0-9):  "))
+            if 1 == option or 5 <= option <= 9:
                 dict_fun[option]()
                 input("Press enter to continue")
             elif 2 <= option <= 3:
